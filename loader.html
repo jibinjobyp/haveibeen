@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Have I Been Compromised? - Security Check</title>
+    <title>Security Check | Standard Loader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,203 +12,202 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem;
+            justify-content: center;
+            padding: 20px;
             color: #333;
         }
-
+        
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             background: white;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            margin-top: 2rem;
         }
-
+        
         header {
             background: #2c3e50;
             color: white;
-            padding: 1.5rem;
+            padding: 25px;
             text-align: center;
         }
-
+        
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             margin-bottom: 10px;
         }
-
+        
         .logo i {
-            font-size: 2.5rem;
-            color: #e74c3c;
+            font-size: 32px;
+            color: #4ecdc4;
         }
-
+        
         .logo h1 {
-            font-size: 2rem;
+            font-size: 28px;
             font-weight: 700;
         }
-
+        
         header p {
-            margin-top: 0.5rem;
-            opacity: 0.8;
+            margin-top: 8px;
+            opacity: 0.9;
+            font-size: 16px;
         }
-
+        
         .content {
-            padding: 2rem;
+            padding: 30px;
         }
-
+        
         .input-section {
-            margin-bottom: 2rem;
+            margin-bottom: 25px;
         }
-
+        
         .input-group {
             display: flex;
-            margin-top: 1rem;
+            margin-top: 15px;
         }
-
+        
         input {
             flex: 1;
-            padding: 1rem;
+            padding: 16px;
             border: 2px solid #ddd;
             border-radius: 6px 0 0 6px;
-            font-size: 1rem;
+            font-size: 16px;
             outline: none;
             transition: border-color 0.3s;
         }
-
+        
         input:focus {
             border-color: #3498db;
         }
-
+        
         button {
             background: #3498db;
             color: white;
             border: none;
-            padding: 0 1.5rem;
+            padding: 0 24px;
             border-radius: 0 6px 6px 0;
             cursor: pointer;
             font-weight: 600;
+            font-size: 16px;
             transition: background 0.3s;
         }
-
+        
         button:hover {
             background: #2980b9;
         }
-
+        
         .info-box {
             background: #f8f9fa;
             border-left: 4px solid #3498db;
-            padding: 1rem;
-            margin: 1.5rem 0;
+            padding: 16px;
+            margin: 20px 0;
             border-radius: 0 4px 4px 0;
+            font-size: 14px;
         }
-
-        .results {
-            display: none;
-            margin-top: 2rem;
+        
+        .info-box i {
+            color: #3498db;
+            margin-right: 8px;
         }
-
-        .result-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-left: 5px solid #e74c3c;
-        }
-
-        .safe {
-            border-left-color: #2ecc71;
-        }
-
-        .breach-list {
-            margin-top: 1rem;
-            list-style-type: none;
-        }
-
-        .breach-list li {
-            padding: 0.75rem;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .breach-list li:last-child {
-            border-bottom: none;
-        }
-
-        .breach-icon {
-            width: 30px;
-            height: 30px;
-            background: #f1f1f1;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #e74c3c;
-        }
-
-        .loading {
+        
+        .loader-section {
             display: none;
             text-align: center;
-            padding: 2rem;
+            padding: 40px 20px;
         }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        
+        .loader-circle {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 1rem;
+            background: conic-gradient(transparent, #3498db, transparent);
+            animation: rotate 1.2s linear infinite;
         }
-
-        @keyframes spin {
+        
+        .loader-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        @keyframes rotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
-        .progress-bar {
-            height: 6px;
-            background: #eee;
-            border-radius: 3px;
-            margin: 1rem 0;
-            overflow: hidden;
+        
+        .loader-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
         }
-
-        .progress {
-            height: 100%;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            width: 0%;
-            animation: progress 2s ease-in-out;
+        
+        .loader-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 15px;
         }
-
-        @keyframes progress {
-            0% { width: 0%; }
-            100% { width: 100%; }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3498db;
+            opacity: 0.6;
+            animation: pulse 1.5s infinite ease-in-out;
         }
-
+        
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        .progress-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
         footer {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 30px;
             color: white;
-            opacity: 0.8;
-            font-size: 0.9rem;
+            opacity: 0.9;
+            font-size: 14px;
         }
-
+        
         @media (max-width: 600px) {
             .input-group {
                 flex-direction: column;
@@ -216,12 +215,20 @@
             
             input {
                 border-radius: 6px;
-                margin-bottom: 0.5rem;
+                margin-bottom: 10px;
             }
             
             button {
                 border-radius: 6px;
-                padding: 1rem;
+                padding: 16px;
+            }
+            
+            .logo h1 {
+                font-size: 24px;
+            }
+            
+            header p {
+                font-size: 14px;
             }
         }
     </style>
@@ -231,15 +238,15 @@
         <header>
             <div class="logo">
                 <i class="fas fa-shield-alt"></i>
-                <h1>Have I Been Compromised?</h1>
+                <h1>Security Check</h1>
             </div>
-            <p>Check if your personal data has been exposed in a data breach</p>
+            <p>Verify your account security with our scanning tool</p>
         </header>
 
         <div class="content">
             <div class="input-section">
-                <h2>Check Your Account Security</h2>
-                <p>Enter your email address to check against known data breaches</p>
+                <h2>Check Your Account</h2>
+                <p>Enter your email address to check for security issues</p>
                 
                 <div class="input-group">
                     <input type="email" id="email-input" placeholder="Enter your email address">
@@ -247,72 +254,45 @@
                 </div>
                 
                 <div class="info-box">
-                    <p><i class="fas fa-info-circle"></i> This service will check your email against known data breaches. Your email is not stored.</p>
+                    <p><i class="fas fa-info-circle"></i> This service will check your email against known security issues. Your email is not stored.</p>
                 </div>
             </div>
 
-            <div class="loading" id="loading-section">
-                <div class="spinner"></div>
-                <p>Scanning hundreds of data breaches...</p>
-                <div class="progress-bar">
-                    <div class="progress"></div>
+            <div class="loader-section" id="loader-section">
+                <div class="loader">
+                    <div class="loader-circle"></div>
+                    <div class="loader-core"></div>
                 </div>
-                <p id="status-text">Initializing scan...</p>
-            </div>
-
-            <div class="results" id="results-section">
-                <h2>Scan Results</h2>
-                <div class="result-card">
-                    <h3>Email: <span id="result-email"></span></h3>
-                    <p id="result-summary"></p>
-                    
-                    <ul class="breach-list" id="breach-list">
-                        <!-- Breach items will be added here -->
-                    </ul>
+                <div class="loader-text">Scanning for security issues</div>
+                <div class="loader-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
                 </div>
-                
-                <div class="info-box">
-                    <p><i class="fas fa-shield-alt"></i> <strong>Recommended actions:</strong> Change passwords for affected services, enable two-factor authentication, and use a password manager.</p>
-                </div>
+                <div class="progress-text" id="progress-text">Initializing...</div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2023 Have I Been Compromised? | Privacy Policy | Terms of Service</p>
+        <p>© 2023 Security Check | Privacy Policy | Terms of Service</p>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const checkBtn = document.getElementById('check-btn');
             const emailInput = document.getElementById('email-input');
-            const loadingSection = document.getElementById('loading-section');
-            const resultsSection = document.getElementById('results-section');
-            const resultEmail = document.getElementById('result-email');
-            const resultSummary = document.getElementById('result-summary');
-            const breachList = document.getElementById('breach-list');
-            const statusText = document.getElementById('status-text');
+            const loaderSection = document.getElementById('loader-section');
+            const progressText = document.getElementById('progress-text');
             
-            // Sample data breaches for demonstration
-            const sampleBreaches = [
-                { name: "SocialMediaHub", date: "Jun 2021", data: "Emails, Passwords, Usernames" },
-                { name: "GlobalTech Corp", date: "Jan 2022", data: "Emails, Passwords" },
-                { name: "PhotoShare Platform", date: "Mar 2020", data: "Emails, Passwords, Photos" },
-                { name: "ShoppingPlus", date: "Dec 2019", data: "Emails, Passwords, Payment Info" }
-            ];
-            
-            // Random results for demonstration
-            const results = [
-                {
-                    safe: false,
-                    text: "Your email was found in 4 data breaches.",
-                    breaches: sampleBreaches
-                },
-                {
-                    safe: true,
-                    text: "Good news! No breaches found for this email address.",
-                    breaches: []
-                }
+            // Progress messages for the loader
+            const progressMessages = [
+                "Initializing scan...",
+                "Checking known vulnerabilities...",
+                "Scanning database entries...",
+                "Analyzing security patterns...",
+                "Finalizing results...",
+                "Complete"
             ];
             
             checkBtn.addEventListener('click', function() {
@@ -328,72 +308,37 @@
                     return;
                 }
                 
-                // Show loading section
-                loadingSection.style.display = 'block';
-                resultsSection.style.display = 'none';
+                // Hide input section, show loader
+                document.querySelector('.input-section').style.display = 'none';
+                loaderSection.style.display = 'block';
                 
                 // Simulate scanning process
                 let progress = 0;
-                const statusMessages = [
-                    "Initializing scan...",
-                    "Checking known data breaches...",
-                    "Cross-referencing with breach database...",
-                    "Analyzing results...",
-                    "Finalizing report..."
-                ];
-                
                 const interval = setInterval(() => {
+                    progressText.textContent = progressMessages[progress];
                     progress++;
-                    statusText.textContent = statusMessages[Math.min(progress, statusMessages.length - 1)];
                     
-                    if (progress >= 5) {
+                    if (progress >= progressMessages.length) {
                         clearInterval(interval);
-                        showResults(email);
+                        // For demonstration, reset after completion
+                        setTimeout(() => {
+                            alert("Scan complete! This is a demonstration.");
+                            resetPage();
+                        }, 1000);
                     }
-                }, 800);
+                }, 1000);
             });
-            
-            function showResults(email) {
-                // Hide loading, show results
-                loadingSection.style.display = 'none';
-                resultsSection.style.display = 'block';
-                
-                // Select a random result for demonstration
-                const result = results[Math.floor(Math.random() * results.length)];
-                
-                // Update result elements
-                resultEmail.textContent = email;
-                resultSummary.textContent = result.text;
-                
-                // Clear previous breaches
-                breachList.innerHTML = '';
-                
-                // Add breaches to list if any
-                if (!result.safe) {
-                    result.breaches.forEach(breach => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `
-                            <div class="breach-icon">${breach.name.charAt(0)}</div>
-                            <div>
-                                <strong>${breach.name}</strong> (${breach.date})
-                                <div>Compromised data: ${breach.data}</div>
-                            </div>
-                        `;
-                        breachList.appendChild(li);
-                    });
-                } else {
-                    const li = document.createElement('li');
-                    li.innerHTML = '<i class="fas fa-check-circle" style="color: #2ecc71;"></i> No known breaches detected';
-                    breachList.appendChild(li);
-                    
-                    // Add safe class to result card
-                    document.querySelector('.result-card').classList.add('safe');
-                }
-            }
             
             function isValidEmail(email) {
                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return re.test(email);
+            }
+            
+            function resetPage() {
+                loaderSection.style.display = 'none';
+                document.querySelector('.input-section').style.display = 'block';
+                progressText.textContent = "Initializing...";
+                emailInput.value = "";
             }
         });
     </script>
