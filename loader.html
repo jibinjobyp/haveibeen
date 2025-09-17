@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Check | Standard Loader</title>
+    <title>Beautiful Circular Loader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,132 +14,95 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            color: #333;
+            color: white;
         }
         
         .container {
             width: 100%;
-            max-width: 600px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 25px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 40px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .logo {
-            display: flex;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .check-btn {
+            background: linear-gradient(to right, #ff6b6b, #ff8e53);
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            margin-top: 20px;
+        }
+        
+        .check-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+        }
+        
+        .check-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .loader-container {
+            display: none;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-        
-        .logo i {
-            font-size: 32px;
-            color: #4ecdc4;
-        }
-        
-        .logo h1 {
-            font-size: 28px;
-            font-weight: 700;
-        }
-        
-        header p {
-            margin-top: 8px;
-            opacity: 0.9;
-            font-size: 16px;
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .input-section {
-            margin-bottom: 25px;
-        }
-        
-        .input-group {
-            display: flex;
-            margin-top: 15px;
-        }
-        
-        input {
-            flex: 1;
-            padding: 16px;
-            border: 2px solid #ddd;
-            border-radius: 6px 0 0 6px;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus {
-            border-color: #3498db;
-        }
-        
-        button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 0 24px;
-            border-radius: 0 6px 6px 0;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-        
-        button:hover {
-            background: #2980b9;
-        }
-        
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #3498db;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-            font-size: 14px;
-        }
-        
-        .info-box i {
-            color: #3498db;
-            margin-right: 8px;
-        }
-        
-        .loader-section {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
+            margin-top: 40px;
         }
         
         .loader {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
             position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
         }
         
         .loader-circle {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: conic-gradient(transparent, #3498db, transparent);
-            animation: rotate 1.2s linear infinite;
+            background: conic-gradient(
+                transparent, 
+                #ff6b6b, 
+                #ff8e53, 
+                #feca57, 
+                #ff9ff3, 
+                #54a0ff, 
+                #5f27cd, 
+                #00d2d3, 
+                transparent
+            );
+            animation: rotate 1.8s linear infinite;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         }
         
         .loader-core {
@@ -147,10 +110,23 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 45px;
-            height: 45px;
-            background: white;
+            width: 170px;
+            height: 170px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             border-radius: 50%;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .loader-dots {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #ff9ff3;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #ff9ff3, 0 0 40px #ff9ff3;
         }
         
         @keyframes rotate {
@@ -159,187 +135,96 @@
         }
         
         .loader-text {
-            font-size: 18px;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 15px;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
-        .loader-dots {
-            display: flex;
-            justify-content: center;
-            gap: 6px;
-            margin-top: 15px;
-        }
-        
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #3498db;
-            opacity: 0.6;
+        .pulse {
             animation: pulse 1.5s infinite ease-in-out;
         }
         
-        .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 1; }
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
         
-        .progress-text {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #7f8c8d;
-        }
-        
-        footer {
-            text-align: center;
+        .completed {
+            display: none;
             margin-top: 30px;
-            color: white;
-            opacity: 0.9;
-            font-size: 14px;
+            font-size: 1.5rem;
+            color: #7bed9f;
+            text-shadow: 0 0 10px rgba(123, 237, 159, 0.5);
         }
         
-        @media (max-width: 600px) {
-            .input-group {
-                flex-direction: column;
-            }
-            
-            input {
-                border-radius: 6px;
-                margin-bottom: 10px;
-            }
-            
-            button {
-                border-radius: 6px;
-                padding: 16px;
-            }
-            
-            .logo h1 {
-                font-size: 24px;
-            }
-            
-            header p {
-                font-size: 14px;
-            }
+        .completed i {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">
-                <i class="fas fa-shield-alt"></i>
-                <h1>Security Check</h1>
+        <h1>Security Check</h1>
+        <p>Click the button below to start the security scan</p>
+        
+        <button class="check-btn" id="check-btn">
+            <i class="fas fa-shield-alt"></i> Start Scan
+        </button>
+        
+        <div class="loader-container" id="loader-container">
+            <div class="loader">
+                <div class="loader-circle"></div>
+                <div class="loader-core"></div>
+                <div class="loader-dots"></div>
             </div>
-            <p>Verify your account security with our scanning tool</p>
-        </header>
-
-        <div class="content">
-            <div class="input-section">
-                <h2>Check Your Account</h2>
-                <p>Enter your email address to check for security issues</p>
-                
-                <div class="input-group">
-                    <input type="email" id="email-input" placeholder="Enter your email address">
-                    <button id="check-btn"><i class="fas fa-search"></i> Check</button>
-                </div>
-                
-                <div class="info-box">
-                    <p><i class="fas fa-info-circle"></i> This service will check your email against known security issues. Your email is not stored.</p>
-                </div>
-            </div>
-
-            <div class="loader-section" id="loader-section">
-                <div class="loader">
-                    <div class="loader-circle"></div>
-                    <div class="loader-core"></div>
-                </div>
-                <div class="loader-text">Scanning for security issues</div>
-                <div class="loader-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <div class="progress-text" id="progress-text">Initializing...</div>
-            </div>
+            <div class="loader-text pulse" id="loader-text">Scanning in progress</div>
+        </div>
+        
+        <div class="completed" id="completed">
+            <i class="fas fa-check-circle"></i> Scan completed successfully!
         </div>
     </div>
-
-    <footer>
-        <p>© 2023 Security Check | Privacy Policy | Terms of Service</p>
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const checkBtn = document.getElementById('check-btn');
-            const emailInput = document.getElementById('email-input');
-            const loaderSection = document.getElementById('loader-section');
-            const progressText = document.getElementById('progress-text');
-            
-            // Progress messages for the loader
-            const progressMessages = [
-                "Initializing scan...",
-                "Checking known vulnerabilities...",
-                "Scanning database entries...",
-                "Analyzing security patterns...",
-                "Finalizing results...",
-                "Complete"
-            ];
+            const loaderContainer = document.getElementById('loader-container');
+            const loaderText = document.getElementById('loader-text');
+            const completed = document.getElementById('completed');
             
             checkBtn.addEventListener('click', function() {
-                const email = emailInput.value.trim();
-                
-                if (!email) {
-                    alert("Please enter an email address");
-                    return;
-                }
-                
-                if (!isValidEmail(email)) {
-                    alert("Please enter a valid email address");
-                    return;
-                }
-                
-                // Hide input section, show loader
-                document.querySelector('.input-section').style.display = 'none';
-                loaderSection.style.display = 'block';
+                // Hide button and show loader
+                checkBtn.style.display = 'none';
+                loaderContainer.style.display = 'flex';
                 
                 // Simulate scanning process
-                let progress = 0;
-                const interval = setInterval(() => {
-                    progressText.textContent = progressMessages[progress];
-                    progress++;
+                setTimeout(() => {
+                    loaderText.textContent = "Analyzing system files";
+                }, 2000);
+                
+                setTimeout(() => {
+                    loaderText.textContent = "Checking for vulnerabilities";
+                }, 4000);
+                
+                setTimeout(() => {
+                    loaderText.textContent = "Finalizing scan";
+                }, 6000);
+                
+                // Show completion after 8 seconds
+                setTimeout(() => {
+                    loaderContainer.style.display = 'none';
+                    completed.style.display = 'block';
                     
-                    if (progress >= progressMessages.length) {
-                        clearInterval(interval);
-                        // For demonstration, reset after completion
-                        setTimeout(() => {
-                            alert("Scan complete! This is a demonstration.");
-                            resetPage();
-                        }, 1000);
-                    }
-                }, 1000);
+                    // Reset after 3 more seconds
+                    setTimeout(() => {
+                        completed.style.display = 'none';
+                        checkBtn.style.display = 'block';
+                        loaderText.textContent = "Scanning in progress";
+                    }, 3000);
+                }, 8000);
             });
-            
-            function isValidEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-            
-            function resetPage() {
-                loaderSection.style.display = 'none';
-                document.querySelector('.input-section').style.display = 'block';
-                progressText.textContent = "Initializing...";
-                emailInput.value = "";
-            }
         });
     </script>
 </body>
