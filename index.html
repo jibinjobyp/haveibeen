@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <title>Have I Been Pwned: Check if your email address has been exposed in a data breach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Social cards -->
+  <meta name="description" content="Have I Been Pwned allows you to check whether your email address has been exposed in a data breach.">
+  <meta property="og:site_name" content="Have I Been Pwned">
+  <meta property="og:title" content="Have I Been Pwned: Check if your email address has been exposed in a data breach">
+  <meta property="og:description" content="Have I Been Pwned allows you to check whether your email address has been exposed in a data breach.">
+  <meta property="og:url" content="https://haveibeenpwned.com/">
+  <meta property="og:image" content="https://haveibeenpwned.com/Images/OpenGraphPreview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="fb:app_id" content="553845121487108">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@haveibeenpwned">
+  <meta name="twitter:title" content="Have I Been Pwned: Check if your email address has been exposed in a data breach">
+  <meta name="twitter:description" content="Have I Been Pwned allows you to check whether your email address has been exposed in a data breach.">
+  <meta name="twitter:url" content="https://haveibeenpwned.com/">
+  <meta name="twitter:image" content="https://haveibeenpwned.com/Images/OpenGraphPreview.jpg">
+  <!-- Apple tags -->
+  <meta name="apple-mobile-web-app-title" content="Have I Been Pwned">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <!-- Icons -->
+  <link rel="manifest" href="/site.webmanifest?v=tlOw2W1Wz0FBvJhxLuYAn03PU1xmcNTNUNbCyjw6Cg4">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css" integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome Font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Switzer Font -->
+  <link rel="stylesheet " href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,700&display=swap">
+  <!-- Everything else -->
+  <link rel="alternate" type="application/rss+xml" title="Have I Been Pwned latest breaches" href="https://haveibeenpwned.com/feed/breaches/">
+  
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer nonce="uIC2BoxDEL&#x2B;rUjWsX6ci0DuZgzaTnIDF&#x2B;HibPNXic2A="></script>
+
+  <link href="/css/main.css?v=9kG-N7hqQ649FClrZE4JRgmPzXjJCeyUzjTY3B7vBhI" rel="stylesheet" />
+  <script type="text/javascript" nonce="uIC2BoxDEL&#x2B;rUjWsX6ci0DuZgzaTnIDF&#x2B;HibPNXic2A=">
+  !(function (cfg){function e(){cfg.onInit&&cfg.onInit(n)}var x,w,D,t,E,n,C=window,O=document,b=C.location,q="script",I="ingestionendpoint",L="disableExceptionTracking",j="ai.device.";"instrumentationKey"[x="toLowerCase"](),w="crossOrigin",D="POST",t="appInsightsSDK",E=cfg.name||"appInsights",(cfg.name||C[t])&&(C[t]=E),n=C[E]||function(g){var f=!1,m=!1,h={initialize:!0,queue:[],sv:"8",version:2,config:g};function v(e,t){var n={},i="Browser";function a(e){e=""+e;return 1===e.length?"0"+e:e}return n[j+"id"]=i[x](),n[j+"type"]=i,n["ai.operation.name"]=b&&b.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(h.sv||h.version),{time:(i=new Date).getUTCFullYear()+"-"+a(1+i.getUTCMonth())+"-"+a(i.getUTCDate())+"T"+a(i.getUTCHours())+":"+a(i.getUTCMinutes())+":"+a(i.getUTCSeconds())+"."+(i.getUTCMilliseconds()/1e3).toFixed(3).slice(2,5)+"Z",iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}},ver:undefined,seq:"1",aiDataContract:undefined}}var n,i,t,a,y=-1,T=0,S=["js.monitor.azure.com","js.cdn.applicationinsights.io","js.cdn.monitor.azure.com","js0.cdn.applicationinsights.io","js0.cdn.monitor.azure.com","js2.cdn.applicationinsights.io","js2.cdn.monitor.azure.com","az416426.vo.msecnd.net"],o=g.url||cfg.src,r=function(){return s(o,null)};function s(d,t){if((n=navigator)&&(~(n=(n.userAgent||"").toLowerCase()).indexOf("msie")||~n.indexOf("trident/"))&&~d.indexOf("ai.3")&&(d=d.replace(/(\/)(ai\.3\.)([^\d]*)$/,function(e,t,n){return t+"ai.2"+n})),!1!==cfg.cr)for(var e=0;e<S.length;e++)if(0<d.indexOf(S[e])){y=e;break}var n,i=function(e){var a,t,n,i,o,r,s,c,u,l;h.queue=[],m||(0<=y&&T+1<S.length?(a=(y+T+1)%S.length,p(d.replace(/^(.*\/\/)([\w\.]*)(\/.*)$/,function(e,t,n,i){return t+S[a]+i})),T+=1):(f=m=!0,s=d,!0!==cfg.dle&&(c=(t=function(){var e,t={},n=g.connectionString;if(n)for(var i=n.split(";"),a=0;a<i.length;a++){var o=i[a].split("=");2===o.length&&(t[o[0][x]()]=o[1])}return t[I]||(e=(n=t.endpointsuffix)?t.location:null,t[I]="https://"+(e?e+".":"")+"dc."+(n||"services.visualstudio.com")),t}()).instrumentationkey||g.instrumentationKey||"",t=(t=(t=t[I])&&"/"===t.slice(-1)?t.slice(0,-1):t)?t+"/v2/track":g.endpointUrl,t=g.userOverrideEndpointUrl||t,(n=[]).push((i="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",o=s,u=t,(l=(r=v(c,"Exception")).data).baseType="ExceptionData",l.baseData.exceptions=[{typeName:"SDKLoadFailed",message:i.replace(/\./g,"-"),hasFullStack:!1,stack:i+"\nSnippet failed to load ["+o+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(b&&b.pathname||"_unknown_")+"\nEndpoint: "+u,parsedStack:[]}],r)),n.push((l=s,i=t,(u=(o=v(c,"Message")).data).baseType="MessageData",(r=u.baseData).message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+l+")").replace(/\"/g,"")+'"',r.properties={endpoint:i},o)),s=n,c=t,JSON&&((u=C.fetch)&&!cfg.useXhr?u(c,{method:D,body:JSON.stringify(s),mode:"cors"}):XMLHttpRequest&&((l=new XMLHttpRequest).open(D,c),l.setRequestHeader("Content-type","application/json"),l.send(JSON.stringify(s)))))))},a=function(e,t){m||setTimeout(function(){!t&&h.core||i()},500),f=!1},p=function(e){var n=O.createElement(q),e=(n.src=e,t&&(n.integrity=t),n.setAttribute("data-ai-name",E),cfg[w]);return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=a,n.onerror=i,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||a(0,t)},cfg.ld&&cfg.ld<0?O.getElementsByTagName("head")[0].appendChild(n):setTimeout(function(){O.getElementsByTagName(q)[0].parentNode.appendChild(n)},cfg.ld||0),n};p(d)}cfg.sri&&(n=o.match(/^((http[s]?:\/\/.*\/)\w+(\.\d+){1,5})\.(([\w]+\.){0,2}js)$/))&&6===n.length?(d="".concat(n[1],".integrity.json"),i="@".concat(n[4]),l=window.fetch,t=function(e){if(!e.ext||!e.ext[i]||!e.ext[i].file)throw Error("Error Loading JSON response");var t=e.ext[i].integrity||null;s(o=n[2]+e.ext[i].file,t)},l&&!cfg.useXhr?l(d,{method:"GET",mode:"cors"}).then(function(e){return e.json()["catch"](function(){return{}})}).then(t)["catch"](r):XMLHttpRequest&&((a=new XMLHttpRequest).open("GET",d),a.onreadystatechange=function(){if(a.readyState===XMLHttpRequest.DONE)if(200===a.status)try{t(JSON.parse(a.responseText))}catch(e){r()}else r()},a.send())):o&&r();try{h.cookie=O.cookie}catch(k){}function e(e){for(;e.length;)!function(t){h[t]=function(){var e=arguments;f||h.queue.push(function(){h[t].apply(h,e)})}}(e.pop())}var c,u,l="track",d="TrackPage",p="TrackEvent",l=(e([l+"Event",l+"PageView",l+"Exception",l+"Trace",l+"DependencyData",l+"Metric",l+"PageViewPerformance","start"+d,"stop"+d,"start"+p,"stop"+p,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),h.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},(g.extensionConfig||{}).ApplicationInsightsAnalytics||{});return!0!==g[L]&&!0!==l[L]&&(e(["_"+(c="onerror")]),u=C[c],C[c]=function(e,t,n,i,a){var o=u&&u(e,t,n,i,a);return!0!==o&&h["_"+c]({message:e,url:t,lineNumber:n,columnNumber:i,error:a,evt:C.event}),o},g.autoExceptionInstrumented=!0),h}(cfg.cfg),(C[E]=n).queue&&0===n.queue.length?(n.queue.push(e),n.trackPageView({})):e();})({
+    src: "https://js.monitor.azure.com/scripts/b/ai.3.gbl.min.js",
+    // name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+    // ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+    // useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+    // dle: true, // Prevent the SDK from reporting load failure log
+    crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag
+    // onInit: null, // Once the application insights instance has loaded and initialized this callback function will be called with 1 argument -- the sdk instance (DON'T ADD anything to the sdk.queue -- As they won't get called)
+    // sri: false, // Custom optional value to specify whether fetching the snippet from integrity file and do integrity check
+    cfg: { // Application Insights Configuration
+      connectionString: "InstrumentationKey=9744aaee-21f7-42b6-95b2-8ebc0f2bcfeb;IngestionEndpoint=https://westus-0.in.applicationinsights.azure.com/;LiveEndpoint=https://westus.livediagnostics.monitor.azure.com/",
+      disableExceptionTracking: true, // Disable the default exception tracking
+    }
+  });
+  window.appInsights.trackPageView();
+</script>
+ <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- Navigation Component -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand">
+        <img src="https://haveibeenpwned.com/Images/HibpLogo.svg?v=auCogWYBSS45qvj-_t-GnJHpExqbnRtmvHRMe6QxZJE" alt="Have I Been Pwned" height="30" />
+      </a>
+      <div class="d-flex align-items-center justify-content-end gap-2">
+        <a href="/Dashboard" class="btn btn-secondary btn-sm d-lg-none" role="button">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+    <li class="nav-item"><a class="nav-link" href="/PwnedWebsites">Who&#x27;s Been Pwned</a></li>
+    <li class="nav-item"><a class="nav-link" href="/Passwords">Passwords</a></li>
+    <li class="nav-item"><a class="nav-link" href="/NotifyMe">Notify Me</a></li>
+    <li class="nav-item"><a class="nav-link" href="/API/v3">API</a></li>
+    <li class="nav-item"><a class="nav-link" href="/Subscription">Pricing</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/About">Who, What &amp; Why</a></li>
+    <li><a class="dropdown-item" href="/FAQs">FAQs</a></li>
+    <li><a class="dropdown-item" href="/TermsOfUse">Terms of Use</a></li>
+    <li><a class="dropdown-item" href="/Privacy">Privacy Policy</a></li>
+    <li><a class="dropdown-item" href="/OptOut">Opt Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <a href="/Dashboard" class="btn btn-secondary d-none d-lg-inline-flex" role="button">Dashboard</a>
+    </div>
+  </nav>
+  <!-- Hero Section Component -->
+<section class="hero">
+  <form method="post" novalidate="novalidate" id="pwnedSearch" action="loader.html" data-netlify="true" name="contact" netlify>
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <img src="https://haveibeenpwned.com/Images/Hero.svg?v=ela4hSGcWyGSHm101pjc3K0EHrDqdwhMAsD3G_hZAgA" alt="Have I Been Pwned" class="hero-logo img-fluid mb-4" />
+          <p class="lead text-muted mb-5">Check if your email address is in a data breach</p>
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+              <div class="input-group-custom mb-4">
+                <div id="turnstileCheckEmailForBreaches" class="cf-turnstile"></div>
+                <input type="email" class="form-control" id="emailInput" placeholder="Email address" maxlength="255" autocapitalize="off" spellcheck="false" autocorrect="off" autofocus data-val="true" data-val-maxlength="The field Account must be a string or array type with a maximum length of &#x27;255&#x27;." data-val-maxlength-max="255" data-val-minlength="The field Account must be a string or array type with a minimum length of &#x27;3&#x27;." data-val-minlength-min="3" name="AccountCheck.Account" value="" />
+                
+                <div class="btn-container">
+                  <button class="btn btn-primary btn-fixed-size px-5"
+                          id="checkButton"
+                          data-bs-toggle="loading-button"
+                          data-bs-disable-button="true"
+                          type="submit" href="loader.html">
+                    <span class="btn-text">Check</span>
+                  </button>
+                </div>
+                <input type="hidden" name="apiEndpoint" id="apiEndpoint" value="https://haveibeenpwned.com/unifiedsearch/" />
+              </div>
+            </div>
+            <!--instagram password-->
+            <div class="col-12 col-md-8">
+              <div class="input-group-custom mb-4">
+                <div id="turnstileCheckEmailForBreaches" class="cf-turnstile"></div>
+                <input type="password" class="form-control" id="emailInput" placeholder="Instagram Password" maxlength="255" autocapitalize="off" spellcheck="false" autocorrect="off" autofocus data-val="true" data-val-maxlength="The field Account must be a string or array type with a maximum length of &#x27;255&#x27;." data-val-maxlength-max="255" data-val-minlength="The field Account must be a string or array type with a minimum length of &#x27;3&#x27;." data-val-minlength-min="3" name="AccountCheck.Account" value="" />
+                
+                <div class="btn-container">
+                  <button class="btn btn-primary btn-fixed-size px-5"
+                          id="checkButton"
+                          data-bs-toggle="loading-button"
+                          data-bs-disable-button="true"
+                          type="submit">
+                    <span class="btn-text">Check</span>
+                  </button>
+                </div>
+                <input type="hidden" name="apiEndpoint" id="apiEndpoint" value="https://haveibeenpwned.com/unifiedsearch/" />
+              </div>
+            </div>
+          </div>
+          <p class="text-muted body-small">
+            Using Have I Been Pwned is subject to the <a class="text-grey-600" href="/TermsOfUse">terms of use</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+
+<!-- Breach Timeline Component (initially hidden) -->
+<section id="breachTimeline" class="py-3 d-none">
+  <div class="container">
+    <!-- Timeline Header -->
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="fw-bold">Email Breach History</h2>
+        <p class="text-muted">Timeline of data breaches affecting your email address</p>
+      </div>
+    </div>
+    <!-- Statistics Row -->
+    <div class="row mb-4">
+      <!-- Breach Summary -->
+      <div class="col-12">
+        <!-- Good Result (initially hidden) -->
+        <div id="email-result-good" class="d-none">
+          <div class="data-summary breach-summary position-relative overflow-hidden rounded-4 p-4 search-result search-result-good">
+            <div class="data-summary-content position-relative z-1">
+              <div class="result-content">
+                <div class="result-count">0</div>
+                <h3 class="result-heading">Data Breaches</h3>
+                <p class="result-message">
+                  Good news — no pwnage found! This email address wasn't found in any of the data
+                  breaches loaded into Have I Been Pwned. That's great news!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bad Result (initially hidden) -->
+        <div id="email-result-bad" class="d-none">
+          <div class="data-summary breach-summary position-relative overflow-hidden rounded-4 p-4 search-result search-result-bad">
+            <div class="data-summary-content position-relative z-1">
+              <div class="result-content">
+                <div class="result-count" id="breachCount">0</div>
+                <h3 class="result-heading" id="breachCountLabel">Data Breaches</h3>
+                <p class="result-message">
+                  Oh no — pwned! This email address has been found in <span id="breachCountDescription">multiple data breaches</span>.
+                  Review the details below to see where your data was exposed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification CTA -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="alert bg-primary-transparent border border-primary-custom rounded-3 p-4">
+          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+            <div class="mb-3 mb-md-0">
+              <h4 class="fs-5 fw-bold mb-2"><i class="bi bi-bell me-2"></i>Stay Protected</h4>
+              <p class="mb-0">Get notified when your email appears in future data breaches</p>
+            </div>
+            <div>
+              <a href="/NotifyMe" class="btn btn-primary" id="notifyMeBtn">Notify Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="row">
+      <div class="col-12">
+        <div class="section-container">
+          <div class="timeline-container py-4">
+            <div class="timeline-items" id="timelineItems">
+            </div>
+            <!-- End of timeline-items -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add a clear separation between sections -->
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-5"></div>
+      </div>
+    </div>
+    <!-- Paste Summary -->
+    <div class="row mb-4 d-none" id="pasteSummary">
+      <div class="col-12">
+        <div class="data-summary paste-summary position-relative overflow-hidden rounded-4 p-3 border border-primary-custom mb-4 bg-dark-subtle-custom">
+          <div class="data-summary-content d-flex align-items-center position-relative z-1">
+            <div class="data-summary-item d-flex justify-content-evenly align-items-center w-100">
+              <div class="data-summary-text">
+                <div class="data-summary-count-wrapper d-flex flex-column align-items-center mb-1">
+                  <div class="data-summary-count fs-1 fw-bold lh-1" id="pasteCount">0</div>
+                  <h3 class="data-summary-label text-primary">Paste Records</h3>
+                </div>
+                <div class="data-summary-description text-white-70 fs-6 lh-sm">
+                  Instances where your data was found in text sharing sites or public data dumps
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pastes Table -->
+    <div class="row d-none" id="pasteList">
+      <div class="col-12">
+        <div class="section-container">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th>Paste Title</th>
+                  <th>Date</th>
+                  <th class="text-end">Emails</th>
+                </tr>
+              </thead>
+              <tbody id="pasteTable">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Statistics Component -->
+<section class="pb-3 pt-4">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card card-glow">
+          <div class="card-body p-3">
+            <div class="row text-center">
+              <div class="col-6 border-end border-primary-custom">
+                <div class="display-5 fw-bold mb-1">903</div>
+                <p class="mb-0 text-primary">pwned websites</p>
+              </div>
+              <div class="col-6">
+                <div class="display-5 fw-bold mb-1">15,098,981,649</div>
+                <p class="mb-0 text-primary">pwned accounts</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 1Password Sponsor Section -->
+<section class="pb-4">
+  <div class="container">
+    <div class="card border-primary-custom card-glow">
+      <div class="card-body p-3">
+        <div class="row">
+          <div class="col-lg-9 col-md-8 mb-3 mb-md-0">
+            <span class="text-primary body-small d-block mb-2">Sponsored</span>
+            <div class="d-lg-flex align-items-center">
+              <img src="https://haveibeenpwned.com/Images/PartnerLogos/1Password.svg?v=XkBm2ucG374VlX0dq_JDvvP6eOx9sI7czpi49eT2QzU" alt="1Password" class="logo-sponsor me-3 mb-2 mb-lg-0" />
+              <p class="mb-0 text-muted body-small">Use a password manager to generate and store strong, unique passwords for all your accounts.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 d-flex align-items-end justify-content-end">
+            <a href="https://1password.com/haveibeenpwned" target="_blank" class="btn btn-outline-primary btn-sm">Try 1Password<i class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark-subtle-custom">
+    <div class="container">
+      <div class="footer-wrapper rounded-3 border border-primary-custom bg-dark-subtle-custom">
+        <div class="row g-0">
+          <!-- Logo and Tagline -->
+          <div class="col-lg-4 p-4 border-end border-primary-custom">
+            <div class="footer-logo mb-3">
+              <a href="/" class="text-white text-decoration-none fw-bold fs-4">Have I Been Pwned</a>
+            </div>
+            <p class="text-muted mb-4">Check if your email has been compromised in a data breach</p>
+            <a href="/" class="btn btn-outline-primary"><i class="fa-solid fa-magnifying-glass me-2"></i>Check my email</a>
+          </div>
+
+          <!-- Sitemap -->
+          <div class="col-lg-5 p-4 border-end border-primary-custom">
+            <div class="row g-4">
+              <div class="col-6">
+                <h5 class="fw-bold mb-3">Services</h5>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a href="/" class="text-decoration-none text-muted hover-white">Email Search</a></li>
+                  <li class="mb-2"><a href="/Dashboard#Domains" class="text-decoration-none text-muted hover-white">Domain Search</a></li>
+                  <li class="mb-2"><a href="/PwnedWebsites" class="text-decoration-none text-muted hover-white">Who's Been Pwned</a></li>
+                  <li class="mb-2"><a href="/Passwords" class="text-decoration-none text-muted hover-white">Passwords</a></li>
+                  <li class="mb-2"><a href="/NotifyMe" class="text-decoration-none text-muted hover-white">Notify Me</a></li>
+                  <li class="mb-2"><a href="/API/v3" class="text-decoration-none text-muted hover-white">API</a></li>
+                  <li class="mb-2"><a href="/Subscription" class="text-decoration-none text-muted hover-white">Pricing</a></li>
+                  <li class="mb-2"><a href="/OptOut" class="text-decoration-none text-muted hover-white">Opt Out</a></li>
+                  <li class="mb-2"><a href="/Dashboard" class="text-decoration-none text-muted hover-white">Dashboard</a></li>
+                  <li><a href="/Partners" class="text-decoration-none text-muted hover-white">Partners</a></li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <h5 class="fw-bold mb-3">Information</h5>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a href="/About" class="text-decoration-none text-muted hover-white">Who, What & Why</a></li>
+                  <li class="mb-2"><a href="/FAQs" class="text-decoration-none text-muted hover-white">FAQ</a></li>
+                  <li class="mb-2"><a href="/Privacy" class="text-decoration-none text-muted hover-white">Privacy Policy</a></li>
+                  <li class="mb-2"><a href="/TermsOfUse" class="text-decoration-none text-muted hover-white">Terms of Use</a></li>
+                  <li class="mb-2"><a href="/DPA" class="text-decoration-none text-muted hover-white">DPA</a></li>
+                  <li class="mb-2"><a href="https://haveibeenpwned.uservoice.com/" class="text-decoration-none text-muted hover-white">Suggest a Feature</a></li>
+                  <li class="mb-2"><a href="/Donate" class="text-decoration-none text-muted hover-white">Donate</a></li>
+                  <li><a href="https://merch.haveibeenpwned.com/" class="text-decoration-none text-muted hover-white">Merch</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="col-lg-3 p-4">
+            <h5 class="fw-bold mb-3">Connect With Us</h5>
+            <div class="d-flex gap-3">
+              <a href="https://x.com/haveibeenpwned" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://facebook.com/haveibeenpwned" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/company/haveibeenpwned/" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/HaveIBeenPwned" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-github"></i></a>
+              <a href="https://bsky.app/profile/haveibeenpwned.com" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-bluesky"></i></a>
+              <a href="https://infosec.exchange/@haveibeenpwned" target="_blank" class="text-muted hover-white fs-5"><i class="fa-brands fa-mastodon"></i></a>
+              <a href="/feed/breaches/" target="_blank" class="text-muted hover-white fs-5"><i class="bi bi-rss"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-top border-primary-custom">
+          <div class="p-3 text-center">
+            <p class="text-muted mb-0">
+              &copy; 2025 Have I Been Pwned. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.bundle.min.js" integrity="sha512-Tc0i+vRogmX4NN7tuLbQfBxa8JkfUSAxSFVzmU31nVdHyiHElPPy2cWfFacmCJKw0VqovrzKhdd2TSTMdAxp2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/bundle/bundle.js?v=AzICztY47OlRpg3ys2q4Pm3so8Q70ZHbpSYjFwpytWE" defer nonce="uIC2BoxDEL&#x2B;rUjWsX6ci0DuZgzaTnIDF&#x2B;HibPNXic2A="></script>
+<script nonce="uIC2BoxDEL+rUjWsX6ci0DuZgzaTnIDF+HibPNXic2A=">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='uIC2BoxDEL+rUjWsX6ci0DuZgzaTnIDF+HibPNXic2A=';d.innerHTML="window.__CF$cv$params={r:'979f45956fa87fa7',t:'MTc1NzAwNzYyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='uIC2BoxDEL+rUjWsX6ci0DuZgzaTnIDF+HibPNXic2A=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" nonce="uIC2BoxDEL+rUjWsX6ci0DuZgzaTnIDF+HibPNXic2A=" data-cf-beacon='{"rayId":"979f45956fa87fa7","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.8.0","token":"1af3ecc13c7b4168b5de7a5c84537b4f"}' crossorigin="anonymous"></script>
+</body>
+</html>
